@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "cartmax",
+  "version": "${version}",
+  "name": "CartMax",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/jiangjm/cartmax"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cartmax/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "linton.cartmax.client.CartMaxClient"
+    ],
+    "main": [
+      "linton.cartmax.CartMax"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
