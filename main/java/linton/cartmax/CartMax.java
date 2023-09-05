@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.client.render.entity.model.MinecartEntityModel;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -27,6 +28,9 @@ public class CartMax implements ModInitializer {
 
     public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("entitytesting", "cube"), "main");
 
+
+//    MinecartEntityModel
+
     /**
      * Runs the mod initializer.
      */
@@ -34,10 +38,12 @@ public class CartMax implements ModInitializer {
     public void onInitialize() {
         CommandHandler.register();
 
-        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, TestCartModel::getTexturedModelData);
+
 
         EntityRendererRegistry.INSTANCE.register(CartMax.TESTCART, (context) -> {
             return new TestCartRenderer(context,MODEL_CUBE_LAYER);
         });
+
+        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, TestCartModel::getTexturedModelData);
     }
 }

@@ -13,6 +13,7 @@ public class TestCartRenderer extends MinecartEntityRenderer<TestCart> {
 
     @Override
     public Identifier getTexture(TestCart abstractMinecartEntity) {
-        return super.getTexture(abstractMinecartEntity);
+//        return super.getTexture(abstractMinecartEntity);
+        return new Identifier("entitytesting", "textures/entity/cube/cube.png");
     }
 }
